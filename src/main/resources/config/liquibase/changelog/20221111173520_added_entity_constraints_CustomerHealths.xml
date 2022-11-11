@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <!--
+        Added the constraints for entity CustomerHealths.
+    -->
+    <changeSet id="20221111173520-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="customer_healths_id"
+                                 baseTableName="rel_customer_healths__allergens"
+                                 constraintName="fk_rel_customer_healths__allergens__customer_healths_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="customer_healths"/>
+
+        <addForeignKeyConstraint baseColumnNames="allergens_id"
+                                 baseTableName="rel_customer_healths__allergens"
+                                 constraintName="fk_rel_customer_healths__allergens__allergens_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="allergens"/>
+    </changeSet>
+</databaseChangeLog>
